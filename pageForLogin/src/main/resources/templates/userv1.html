@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User List</title>
+</head>
+<body>
+<h2>User List</h2>
+<table>
+  <!-- Table headers -->
+  <tr>
+    <th>ID</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+
+  <!-- Table rows -->
+  <!-- Using Thymeleaf iteration to loop through the list of users -->
+  <tr th:each="user : ${users}">
+    <!-- Displaying user ID -->
+    <td th:text="${user.id}"></td>
+
+    <!-- Displaying user email -->
+    <td th:text="${user.email}"></td>
+
+    <!-- Displaying a masked password (hidden for security) -->
+    <td>********</td>
+
+    <!-- Displaying user first name -->
+    <td th:text="${user.firstName}"></td>
+
+    <!-- Displaying user last name -->
+    <td th:text="${user.lastName}"></td>
+  </tr>
+
+</table>
+</body>
+</html>
